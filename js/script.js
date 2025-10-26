@@ -1,17 +1,21 @@
-const contacts = document.querySelectorAll('.contact[data-copy]');
-const toast = document.getElementById('toast');
-const toggle = document.querySelector('.theme-toggle');
+const contacts = document.querySelectorAll('.contact');
 
-contacts.forEach(c => {
-    c.addEventListener('click', () => {
-        navigator.clipboard.writeText(c.dataset.copy).then(() => {
-            toast.classList.add('show');
-            setTimeout(()=>toast.classList.remove('show'), 2000);
-        });
+function getRandomColor() {
+    const colors = ['#ffeb3b', '#ff9800', '#8bc34a', '#00bcd4', '#e91e63', '#9c27b0'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+setInterval(() => {
+    contacts.forEach(contact => {
+        contact.style.backgroundColor = getRandomColor();
     });
-});
+}, 2000);
 
-toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+contacts.forEach(contact => {
+    contact.addEventListener('mouseenter', () => {
+        contact.style.transform = 'translateY(-5px)';
+    });
+    contact.addEventListener('mouseleave', () => {
+        contact.style.transform = 'translateY(0)';
+    });
 });
