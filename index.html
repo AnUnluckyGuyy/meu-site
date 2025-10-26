@@ -3,71 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Meus Contatos</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f5f7fa;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            background: #fff;
-            padding: 40px 50px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            text-align: center;
-            max-width: 350px;
-            width: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-        }
-        h1 {
-            font-size: 1.9rem;
-            margin-bottom: 25px;
-            color: #333;
-            letter-spacing: 0.5px;
-        }
-        .contacts {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .contact, .contact-link a {
-            background: #f0f3f7;
-            padding: 12px 15px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            color: #333;
-            text-decoration: none;
-        }
-        .contact:hover, .contact-link a:hover {
-            background: #e1e7ee;
-            transform: translateY(-3px);
-            color: #111;
-        }
-        .contact span {
-            font-weight: 600;
-        }
-        .contact-link a {
-            display: block;
-        }
-        .footer {
-            margin-top: 25px;
-            font-size: 0.85rem;
-            color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -80,18 +16,6 @@
         </div>
         <div class="footer">© 2025 Meus Contatos</div>
     </div>
-    <script>
-        const items = document.querySelectorAll('.contact, .contact-link a');
-        items.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.transform = 'translateY(-5px)';
-                item.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
-            });
-            item.addEventListener('mouseleave', () => {
-                item.style.transform = 'translateY(0)';
-                item.style.boxShadow = 'none';
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
